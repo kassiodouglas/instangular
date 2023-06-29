@@ -1,5 +1,5 @@
 /**
- * Comando para criação de componentes internos
+ * Comando para criação de serviços
  */
 
 var shell = require('shelljs');
@@ -7,13 +7,6 @@ var yargs = require('yargs');
 
 
 const options = yargs.options({
-
-  local: {
-    alias: 'l',
-    description: 'Local onde será criado o novo componente. Todos por padão ficam dentro de "resources"',
-    type: 'string',
-    demandOption: true
-  },
 
   name: {
     alias: 'n',
@@ -33,14 +26,12 @@ const options = yargs.options({
 
 const tests = (!options.test) ? '--skip-tests' : '';
 
-const path = `resources/${options.local}/${options.name}`
+const path = `services/${options.name}`
 
 
-const command = `ng generate component ${path} ${tests}`;
+const command = `ng generate service ${path} ${tests}`;
 const { stdout, stderr, code } = shell.exec(command);
 
 if (code !== 0) {
   console.error('Erro ao executar o comando:', stderr);
-} else {
-  console.log('Saída do comando:', stdout);
 }
