@@ -6,4 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  session:object = {
+    logged:true,
+    name: 'Kassio Douglas',
+    username: 'kassdoug',
+    email: 'kass.doug@gmail.com'
+  }
+
 }

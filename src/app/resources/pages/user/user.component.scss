@@ -1,0 +1,56 @@
+.photoUser {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  img {
+    border-radius: 360px;
+    width: 40%;
+    height: 80%;
+  }
+
+}
+
+.dataUser {
+  font-size: .8rem;
+
+  .userLogin {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .userName {
+    font-size: 1rem;
+  }
+
+  // .userDescription {}
+
+
+}
+
+.userPhotosArea {
+    display: flex;
+    justify-content: center;
+
+
+  .photo {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(57, 74, 88, 0.212);
+    background-size: cover;
+    min-width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    border: 1px solid #dddddd00;
+    transition: all ease-in-out 0.3s;
+    margin: 0 15px;
+
+    &:hover{
+      border: 1px solid #4d4c4c
+    }
+  }
+
+}

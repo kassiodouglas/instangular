@@ -1,0 +1,37 @@
+<div class="modal fade" id="userPhoto" tabindex="-1" aria-labelledby="userPhotoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+
+      <div class="modal-body p-0 d-flex flex-row">
+        <div class="w-50 photoArea">
+          <img src="../../../../assets/img/user_default.png" >
+        </div>
+
+        <div class="w-50 p-3 commentsArea">
+          <h6 class="border-bottom pb-3">Oi gente!!!! =)</h6>
+
+          <div class="comment mb-3">
+            <div class="photoUser">
+              <img src="../../../../assets/img/user_default.png" height="50">
+              <span class="fw-bold mx-2">@kassDoug</span> JANNNN!!! =)
+            </div>
+            <small class="dateTime">09/07 10:10</small>
+          </div>
+
+          <div class='commentsFooter w-100'>
+            <div *ngIf="!session.logged" class="text-center border-top py-4 w-100">
+              <i class='bi bi-exclamation-square-fill'></i> Faça o login para comentar
+            </div>
+            <div *ngIf="session.logged" class="text-center border-top py-4 w-100">
+              <textarea class="w-100 form-control"></textarea>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

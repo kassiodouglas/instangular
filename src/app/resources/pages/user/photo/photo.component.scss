@@ -1,0 +1,49 @@
+img {
+  width: 100%;
+}
+
+.photoArea{
+  img{
+  border-radius: 8px 0 0 8px;
+  }
+
+}
+
+.commentsArea {
+  position: relative;
+
+  .comment {
+    margin: 5px 0;
+
+    .photoUser {
+      font-size: .8rem;
+
+      img {
+        width: 20px;
+        height: 20px;
+        border-radius: 360px;
+      }
+
+    }
+
+    .dateTime{
+      font-size: .7rem;
+    }
+  }
+
+  .commentsFooter {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    min-height: 60px;
+
+    textarea {
+      border-radius: 0;
+      width: 100%;
+      min-height: 60px;
+    }
+  }
+
+}
