@@ -1,0 +1,16 @@
+.navbar {
+  z-index: 100;
+  .container {
+    .searchArea {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 50%;
+      padding: 0 15px;
+     
+    }
+
+  }
+
+}

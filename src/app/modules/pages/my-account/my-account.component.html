@@ -1,0 +1,231 @@
+<!-- cover -->
+<div class="row">
+    <div class="col">
+
+        <mat-card class="mb-4 p-0">
+            <mat-card-content class="p-0">
+
+                <div class="shadow rounded position-relative">
+
+                    <img src="https://www.allianz.lk/products/general-insurance-products/personal-accident-cover/_jcr_content/root/parsys/stage/stageimage.img.82.1920.jpeg/1612944516411/pab-banner.jpeg"
+                        width="100%" height="250px" style="object-fit: cover;" class="rounded">
+
+                    <div class="position-absolute  w-100" style="bottom:20px; left:0px; max-height: 25%;">
+
+                        <div class="d-flex align-items-center flex-row justify-content-between"
+                            style="background-color: #0000008f;">
+
+                            <div class="d-flex flex-row justify-content-start align-items-center">
+                                <img class='mx-3' *ngIf="session" src="{{baseApiAvatar}}/{{session.avatar}}" style="width: 60px; height: 60px; border-radius: 360px; opacity: 1;">
+
+                                <div class="d-flex flex-column justify-content-start mb-4 mt-2 text-white">
+                                    <div class="">
+                                        {{'name'|auth}} <small class="opacity-75"
+                                            style="font-size: .7rem;">@{{'login'|auth}} </small>
+                                    </div>
+                                    <small class="opacity-50" style="font-size: .7rem;">Desenvolvedor Web Pleno /
+                                        Desenhista por hobby / Aventureiro</small>
+                                </div>
+                            </div>
+
+                           
+                            <mat-card-actions>
+                                <button mat-icon-button [matMenuTriggerFor]="menuCover" aria-label="Opções de edição de perfil" class="text-white">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #menuCover="matMenu">
+                                    <button mat-menu-item>
+                                        <i class="bi bi-pen-fill mx-2"></i>
+                                        <span>Editar 'sobre'</span>                                      
+                                    </button>     
+
+                                    <button mat-menu-item>
+                                        <i class="bi bi-person-badge mx-2"></i>
+                                        <span>Alterar avatar</span>                            
+                                    </button>     
+
+                                    <button mat-menu-item>
+                                        <i class="bi bi-image mx-2"></i>
+                                        <span>Alterar foto de capa</span>                                
+                                    </button>                                      
+                                                                      
+                                </mat-menu>
+                            </mat-card-actions>
+
+                           
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+</div>
+
+
+
+
+<div class="row">
+
+
+    <div class="col-12 col-lg-3">
+
+        <!-- about -->
+        <mat-card class="mb-4">
+
+            <div class="d-flex justify-content-between">
+                <mat-card-header>
+                    <mat-card-title> <span class="h6"> eu sou... </span> </mat-card-title>
+                </mat-card-header>
+
+                <mat-card-actions>
+                    <button mat-icon-button [matMenuTriggerFor]="menuAbout" aria-label="Example icon-button with a menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+
+                    <mat-menu #menuAbout="matMenu">
+                        <button mat-menu-item>
+                            <i class="bi bi-pen-fill mx-2"></i>
+                            <span>Editar 'sobre'</span>
+                        </button>                      
+                    </mat-menu>
+
+                </mat-card-actions>
+            </div>
+
+
+
+            <mat-card-content>
+
+                <div class="">
+                    <div class="col-12">
+                        <small style="text-align: justify;">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia condimentum libero,
+                            non tincidunt mi sodales mattis. Pellentesque ornare venenatis nulla, sed consectetur lorem
+                            scelerisque nec. Maecenas urna diam, ullamcorper ac tellus ac, mattis fringilla nunc. Ut non
+                            tincidunt dolor.
+                        </small>
+
+                        <div class="mt-3">
+                            <span class="mx-2"> <i class="bi bi-facebook"></i> </span>
+                            <span class="mx-2"> <i class="bi bi-whatsapp"></i> </span>
+                            <span class="mx-2"> <i class="bi bi-instagram"></i> </span>
+                            <span class="mx-2"> <i class="bi bi-linkedin"></i> </span>
+                            <span class="mx-2"> <i class="bi bi-pinterest"></i> </span>
+                      
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+
+    </div>
+
+
+    <div class="col-12 col-lg-9">
+
+        <div class="row">
+            <div class="col-12">
+                <mat-card class="mb-4">
+                    <mat-card-header>
+                        <mat-card-title> <span class="h6"> meus dados </span> </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+
+
+                        <form>
+                            <mat-form-field class="me-3 col-2">
+                                <mat-label>Login</mat-label>
+                                <input matInput value="{{session.login}}" disabled>
+                            </mat-form-field>
+
+                            <mat-form-field class="me-3 col-4">
+                                <mat-label>Nome</mat-label>
+                                <input matInput value="{{session.name}}" disabled>
+                            </mat-form-field>
+
+                            <mat-form-field class="me-3 col-4">
+                                <mat-label>Email</mat-label>
+                                <input matInput type="email" value="{{session.email}}" disabled>
+                            </mat-form-field>
+                        </form>
+
+
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <div class="col-12">
+                <mat-card class="mb-4">
+                    <mat-card-header>
+                        <mat-card-title> <span class="h6">senha de acesso </span> </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+
+                        <div class="mb-3">
+                            <form class="">
+                                <mat-form-field class="me-3 col-2">
+                                    <mat-label>Senha atual</mat-label>
+                                    <input matInput type="password" disabled>
+                                </mat-form-field>
+
+                                <mat-form-field class="me-3 col-4">
+                                    <mat-label>Nova senha</mat-label>
+                                    <input matInput type="password" disabled>
+                                </mat-form-field>
+
+                                <mat-form-field class="me-3 col-4">
+                                    <mat-label>Confirmação da nova senha</mat-label>
+                                    <input matInput type="password" disabled>
+                                </mat-form-field>
+
+                                <button type='submit' class='btn btn-sm btn-success small' disabled> <i
+                                        class="bi bi-pen-fill"></i> Salvar nova senha </button>
+
+                            </form>
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <div class="col-12">
+
+                <mat-card class="mb-4">
+                    <mat-card-header>
+                        <mat-card-title> <span class="h6"> desativar / excluir conta </span> </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <P>Está ação é reversível. Seus dados continuam como estão até que você faça login
+                                    novamente.</P>
+                                <button class='btn btn-sm btn-warning small'> <i class="bi bi-person-dash"></i>
+                                    Desativar minha conta temporariamente.</button>
+                            </div>
+
+                            <div class="col-6">
+                                <P>Está acão é irreversível! Faça com cautela!</P>
+                                <br>
+                                <button class='btn btn-sm btn-danger small'> <i class="bi bi-person-dash"></i> EXCLUIR
+                                    MINHA CONTA!! </button>
+                            </div>
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

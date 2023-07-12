@@ -1,0 +1,19 @@
+
+<div class="fs-4 py-3">Nossos mais recentes usuários!</div>
+
+<div  class="row newUsersArea mb-5 p-3">
+
+  <div *ngFor="let newUser of newUsers" class="col-2 p-0 p-md-2 photo">
+    <a class='d-flex flex-row justify-content-center' [routerLink]="['@',newUser.login]">
+      <img src="{{baseApiAvatar}}/{{newUser.avatar}}">
+      <div class="userName">@{{newUser.login}}</div>
+    </a>
+  </div>
+
+</div>
+
+
+<div class="fs-4 py-3">Posts mais curtidos do dia!</div>
+<span> in dev...</span>
+
+

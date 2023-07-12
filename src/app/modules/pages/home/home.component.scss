@@ -1,0 +1,55 @@
+.newUsersArea {
+  min-height: 250px;
+  border-radius: 5px;
+
+
+  .photo {
+    cursor: pointer;
+    transition: all ease-in-out .3s;
+    height: 100%;
+
+    a {
+      position: relative;
+
+      .userName {
+        transition: all ease-in-out .3s;
+        position: absolute;
+        bottom: 0px;
+        background: #00000085;
+        padding: 5px;
+        border-radius: 5px;
+        color: #fff;
+        width: 100%;
+      }
+    }
+
+
+
+    &:hover {
+      transform: scale(1.01);
+
+      a .userName {
+        background: #000000cb;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 5px;
+      object-fit: cover;
+      background-color: #000;
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .newUsersArea {
+    .photo {
+      a .userName {
+        display: none;
+      }
+    }
+  }
+}

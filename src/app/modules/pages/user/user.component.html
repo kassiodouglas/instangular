@@ -1,0 +1,63 @@
+
+<div class="userArea mt-3 pt-3">
+
+  <div class="row p-3">
+
+  <div class="col-12 col-lg-4 photoUser">
+    <img *ngIf="userData" src="{{baseApiAvatar}}/{{userData.avatar}}" width="100%">      
+  </div>
+
+  <div class="col-12 col-lg-8 dataUser">
+
+    <div class="row mb-3">
+      <div class="userLogin">@{{userData?.login}}</div>
+      <div class="userName">{{userData?.name}}</div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-4 col-lg-2">{{("000" + photos!.length).slice(-3)}} publicações</div>
+      <div class="col-4 col-lg-2">000 seguidores</div>
+      <div class="col-4 col-lg-2">000 seguindo</div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <p class="userDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia condimentum libero, non tincidunt mi sodales mattis. Pellentesque ornare venenatis nulla, sed consectetur lorem scelerisque nec. Maecenas urna diam, ullamcorper ac tellus ac, mattis fringilla nunc. Ut non tincidunt dolor.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+<div class="border-bottom border-secondary w-100 my-3"></div>
+
+<div class="userPhotosArea">
+
+  <div class='row mb-4'>
+
+    <div *ngIf="photos.length == 0" class="col-12 mt-4 d-flex text-center justify-content-center h2">
+      Sem fotos postadas ainda!  <i class="bi bi-emoji-frown"></i>
+    </div>
+
+    <div *ngFor="let photo of photos" class='col-6 col-mb-4 col-lg-3 position-relative d-flex justify-content-center mb-4'>      
+
+      <div class="photo-length-comments badge bg-primary">{{("00" + photo.comments!.length).slice(-2)}} <i class="bi bi-chat-left-dots"></i></div>
+      <div class="photo-length-likes badge bg-danger">{{("00" + 00).slice(-2)}} <i class="bi bi-heart-fill"></i></div>
+
+      <div class='photo' (click)="openPhoto(photo)"> 
+        <img src="{{baseApiPhotos}}/{{photo.photo}}">      
+      </div>   
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
