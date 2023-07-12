@@ -99,15 +99,9 @@ export class UserComponent implements OnInit, OnDestroy {
   openPhoto(photo: any): void { 
 
     this.dialog.open(PhotoComponent, {
-      minHeight:'40vh',
       autoFocus :false,
       data: photo,
     });
-
-    // this.modalEl = document.querySelector(`#photoModal${id}`);
-    // this.modalInstance = new window.bootstrap.Modal(this.modalEl);
-
-    // this.modalInstance.show()
   }
 
 }

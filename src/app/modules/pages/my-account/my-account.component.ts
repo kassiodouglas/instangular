@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import {MatCardModule} from '@angular/material/card';
-import {MatInput} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
 import { Auth } from 'src/app/core/Auth';
 import { environment } from 'src/environments/environment';
 

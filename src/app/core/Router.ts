@@ -24,7 +24,7 @@ export class Router{
       return this.routes;
     }
 
-    static path(name:string): String{
+    static path(name:string, args?:Array<object>|null): String{
 
       let path = '';
 
@@ -48,6 +48,26 @@ export class Router{
         }
 
       });
+
+      if(path.includes(':')){
+        var newPath = path
+        const paths = path.split('/')
+       
+        paths.forEach(pathArg=>{
+
+          if(pathArg.includes(':')){
+          var x:any = args![0];
+         
+          var key = pathArg.replace(':','')  
+             
+          newPath = newPath.replace(pathArg, x[key])        
+          } 
+        })
+
+        path = newPath
+
+      }     
+       
 
       return path
     }

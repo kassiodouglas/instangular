@@ -1,14 +1,13 @@
 import { Router, CanActivate } from '@angular/router';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import * as Notiflix from 'notiflix';
 import { Auth } from '../Auth';
 
 @Injectable()
-export class AuthGuard implements CanActivate, OnInit {
-
-   
+export class AuthGuard implements CanActivate {   
 
     constructor(private router:Router){}
+
     canActivate() {
 
         const userdata = Auth.get();
@@ -23,8 +22,4 @@ export class AuthGuard implements CanActivate, OnInit {
         return false
     }
 
-    ngOnInit(): void {
-        
-        
-    }
 }

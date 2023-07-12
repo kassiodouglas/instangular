@@ -3,7 +3,6 @@ import { AuthGuard } from "../core/guards/auth-guard";
 import { DefaultComponent } from "../modules/layouts/default/default.component";
 import { AboutComponent } from "../modules/pages/about/about.component";
 import { DevComponent } from "../modules/pages/dev/dev.component";
-import { ErrorComponent } from "../modules/pages/error/error.component";
 import { HomeComponent } from '../modules/pages/home/home.component';
 import { LogoutComponent } from "../modules/pages/logout/logout.component";
 import { MyAccountComponent } from "../modules/pages/my-account/my-account.component";
@@ -26,9 +25,8 @@ Router.layout(DefaultComponent, ()=>{
 
 
 
-// ficar no final
-Router.named('error').get('error/:type', ErrorComponent).set();
-Router.redirect('**', 'error/404');
+
+
 
 
 

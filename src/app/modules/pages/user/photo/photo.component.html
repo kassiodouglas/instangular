@@ -1,59 +1,62 @@
 
-<div mat-dialog-content class='p-0' style="overflow-y: auto; overflow-x: hidden; max-height: 100%; max-width:  100%; background-color: #ffffff00 !important; z-index: 1000;">
+<div mat-dialog-content class='mat-card'>
 
-  <div class="row d-flex flex-row" style="overflow: auto;">
-  
-    <div class="col-12 col-lg-6 photoArea" style="background-image: url({{baseApiPhotos}}/{{data.photo}}); background-size: contain; background-repeat: no-repeat; background-position: center;">
+    <div class="areaPhoto">
+      <img src="{{baseApiPhotos}}/{{data.photo}}">
     </div>
 
-    <div class="col-12 col-lg-6 commentsArea">
-
-      <div class='commentsHeader w-100'>
-        <h6 class="border-bottom pb-3">
-          {{data.description}}
-        </h6>
+    <div class="areaComments">
+      
+      <div class="header border-bottom">
+        {{data.description}} 
       </div>
 
-      <div class='commentsBody w-100'>
-
-        <div *ngIf="data.comments.length == 0" class="comment text-secondary text-center w-100">
+      <div class="body">
+        
+        <div *ngIf="data.comments.length == 0" class="text-secondary text-center w-100">
           Sem comentários ainda. Seja o primeiro! <i class="bi bi-emoji-laughing"></i>
         </div>
 
-        <div *ngFor="let comment of data.comments" class="comment">
-          <a class="photoUser" href="/@/{{comment.user.login}}">
-            <img src="{{baseApiAvatar}}/{{comment.user.avatar}}" height="50">
-            <span class="fw-bold mx-2">@{{comment.user.login}}</span>               
-          </a>
-          <small>{{comment.comment}}</small>
-          <br>
-          <small class="dateTime">{{comment.created_at | date: "dd/MM H:mm"}}</small>
+        <div *ngFor="let comment of data.comments" class="mb-3">
+
+          <div>
+            <a class="photoUser" href="{{'user'|route:{'login':comment.user.login}  }}">
+              <img src="{{baseApiAvatar}}/{{comment.user.avatar}}">
+              <span class="fw-bold mx-2">@{{comment.user.login}}</span>                          
+            </a>
+
+            <small class="dateTime">{{comment.created_at | date: "dd/MM H:mm"}}</small> 
+          </div>
+          <div class="small mt-1">{{comment.comment}}</div>      
         </div>
 
       </div>
 
-      <div class='commentsFooter w-100'>
-
+      <div class="footer">
+        
+        
         <div *ngIf="!session; else inputComment" class="text-center border-top">
           <i class='bi bi-exclamation-square-fill'></i> Faça o login para comentar
         </div>
 
-        <ng-template #inputComment class="">
+        <ng-template #inputComment class="inputComment">
           <small>Deixe seu comentário </small>     
 
-          <div class="input-group">
-            <input type="text" class="form-control" >
-            <button class="btn btn-outline-secondary" type="button"> <i class="bi bi-send-plus-fill"></i> </button>               
-          </div>
+          <form (ngSubmit)="submit()" [formGroup]="formComment" #formDir="ngForm" id='formComment'>
+            <div class="input-group ">            
+              <input type="hidden" formControlName="id">
+              <input matInput type='text' class="form-control" formControlName='comment' [(ngModel)]="commentInputValue">
+              <button class="btn btn-outline-secondary" type="submit"> <i class="bi bi-send-plus-fill"></i> </button>               
+            </div>
+         
+          </form>
           
         </ng-template>
 
       </div>
 
+      
     </div>
 
-  </div>
-
 </div>
-
 

@@ -100,15 +100,16 @@
               </button>
               <ul class="dropdown-menu">
                     
-                <li><a class="dropdown-item" routerLink="/"> <i class="bi bi-postcard"></i> Feed</a></li> 
+                <li><a class="dropdown-item" routerLink="{{'home'|route:{'login':'kassio'} }}"> <i class="bi bi-postcard"></i> Feed</a></li> 
 
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" routerLink="/@/{{'login'|auth}}"> <i class="bi bi-postcard"></i> Minha história</a></li>            
-                <li><a class="dropdown-item" routerLink="/minha-conta"> <i class="bi bi-person-bounding-box"></i> Minha Conta</a></li> 
+               
+                <li><a class="dropdown-item" href="{{'user'|route:{'login':('login'|auth)} }}"> <i class="bi bi-postcard"></i> Minha história</a></li>                       
+                <li><a class="dropdown-item" routerLink="{{'myaccount'|route}}"> <i class="bi bi-person-bounding-box"></i> Minha Conta</a></li> 
                 <li><button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#postModalForm"> <i class="bi bi-camera"></i> Nova foto</button></li> 
                 
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" routerLink="/logout">Logout</a></li>
+                <li><a class="dropdown-item" routerLink="{{'logout'|route}}">Logout</a></li>
               </ul>
             </li>
           

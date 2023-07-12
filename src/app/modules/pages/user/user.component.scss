@@ -1,11 +1,21 @@
 .userArea {
   border-radius: 5px;
+  position: relative;
+
+  .cover{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+  }
 
   .photoUser {
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 360px;
+    z-index: 10;
 
 
     img {
@@ -21,6 +31,7 @@
   .dataUser {
     font-size: .8rem;
     min-height: 170px;
+    z-index: 10;
 
     .userLogin {
       font-weight: bold;
@@ -73,3 +84,10 @@
 
 }
 
+@media screen and (max-width:720px){
+  .userArea{
+    .photoUser{
+      justify-content: start;
+    }
+  }
+}

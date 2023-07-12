@@ -33,5 +33,11 @@ export class PhotoService {
     return this.http.get<Response<Photos[]>>(url)
   }
 
+  getUserPhoto(login: string, idPhoto:number): Observable<Response<Photos[]>>
+  {
+    const url = `${this.apiUrl}/user/${login}/${idPhoto}`;    
+    return this.http.get<Response<Photos[]>>(url)
+  }
+
 
 }

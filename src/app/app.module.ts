@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './core/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -26,11 +26,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LogoutComponent } from './modules/pages/logout/logout.component';
-import { AuthPipe } from './auth.pipe';
+import { AuthPipe } from './core/pipes/auth.pipe';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { RoutePipe } from './core/pipes/route.pipe';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     ContentAnimateDirective,
     DefaultComponent,
     LogoutComponent,
-    AuthPipe
+    AuthPipe,
+    RoutePipe
   ],
   imports: [
     BrowserModule,
